@@ -124,7 +124,7 @@ def store_predictions_as_csv(predictions: pd.DataFrame, file_path: str) -> None:
 def cli_main():
     script_parser = get_script_parser()
     script_args, extra = script_parser.parse_known_args()
-
+    print(script_args, extra)
     parser = options.get_generation_parser(interactive=True, default_task='captioning')
     model_args = options.parse_args_and_arch(parser, input_args=extra)
     main(script_args, model_args)
